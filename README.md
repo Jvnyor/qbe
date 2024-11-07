@@ -81,17 +81,17 @@ List<Employee> engineers = employeeRepository.findAll(example);
 
 QBE is ideal for:
 
-✅ Search forms with multiple optional filters
-✅ Quick prototyping and development
-✅ Simple equality-based queries
-✅ Scenarios where search criteria are unknown at compile time
+- ✅ Search forms with multiple optional filters
+- ✅ Quick prototyping and development
+- ✅ Simple equality-based queries
+- ✅ Scenarios where search criteria are unknown at compile time
 
 Consider alternatives when you need:
 
-❌ Complex comparisons (>, <, BETWEEN)
-❌ OR conditions
-❌ Complex JOIN operations
-❌ Custom SQL functions
+- ❌ Complex comparisons (>, <, BETWEEN)
+- ❌ OR conditions
+- ❌ Complex JOIN operations
+- ❌ Custom SQL functions
 
 ## Project Structure
 

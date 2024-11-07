@@ -26,6 +26,12 @@ public class EmployeeService {
         return employeeRepository.findAll(example);
     }
 
+    // Find a single employee with example
+    public Optional<Employee> findOneEmployeeByExample(Employee employee) {
+        Example<Employee> example = Example.of(employee);
+        return employeeRepository.findOne(example);
+    }
+
     // Find employees with custom matching rules
     public List<Employee> findEmployeesWithCustomMatcher(String firstName,
                                                          String department) {
@@ -44,12 +50,6 @@ public class EmployeeService {
 
         Example<Employee> example = Example.of(employee, matcher);
         return employeeRepository.findAll(example);
-    }
-
-    // Find a single employee with example
-    public Optional<Employee> findOneEmployeeByExample(Employee employee) {
-        Example<Employee> example = Example.of(employee);
-        return employeeRepository.findOne(example);
     }
 
     // Count employees matching example
