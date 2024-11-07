@@ -1,6 +1,6 @@
 # Spring Data JPA Query By Example Demo
 
-Transform your Spring Data JPA queries from complex boilerplate into elegant, type-safe search operations with Query By Example (QBE). This project demonstrates how to implement dynamic, flexible queries without the overhead of writing multiple repository methods or complex JPQL statements.
+Transform your Spring Data JPA queries from complex boilerplate into elegant, type-safe search operations with [Query By Example](https://docs.spring.io/spring-data/jpa/reference/repositories/query-by-example.html). This project demonstrates how to implement dynamic, flexible queries without the overhead of writing multiple repository methods or complex JPQL statements.
 
 ## Overview
 

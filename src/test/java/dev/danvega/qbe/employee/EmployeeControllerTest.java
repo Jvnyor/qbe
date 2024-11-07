@@ -51,7 +51,6 @@ class EmployeeControllerTest {
 
     @BeforeEach
     void setUp() {
-        // Initialize test data
         sampleEmployee = Employee.builder()
                 .id(1L)
                 .firstName("John")
