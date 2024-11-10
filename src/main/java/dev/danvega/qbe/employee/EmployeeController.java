@@ -16,13 +16,22 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/search")
+    @GetMapping("/search-by-name")
     public ResponseEntity<List<Employee>> searchEmployees(
             @RequestParam(required = false) String firstName,
             @RequestParam(required = false) String department) {
 
         List<Employee> employees = employeeService
                 .findEmployeesWithCustomMatcher(firstName, department);
+        return ResponseEntity.ok(employees);
+    }
+
+    @GetMapping("/search-by-search-like")
+    public ResponseEntity<List<Employee>> searchEmployees(
+            @RequestParam(required = false) String searchLike) {
+
+        List<Employee> employees = employeeService
+                .findEmployeesWithCustomMatcher(searchLike);
         return ResponseEntity.ok(employees);
     }
 

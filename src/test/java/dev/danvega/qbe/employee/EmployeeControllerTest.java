@@ -74,13 +74,13 @@ class EmployeeControllerTest {
     }
 
     @Test
-    void searchEmployees_WithValidParameters_ReturnsEmployeeList() throws Exception {
+    void searchEmployeesByName_WithValidParameters_ReturnsEmployeeList() throws Exception {
         // Given
         when(employeeService.findEmployeesWithCustomMatcher("John", "IT"))
                 .thenReturn(Collections.singletonList(sampleEmployee));
 
         // When & Then
-        mockMvc.perform(get("/api/employees/search")
+        mockMvc.perform(get("/api/employees/search-by-name")
                         .param("firstName", "John")
                         .param("department", "IT")
                         .contentType(MediaType.APPLICATION_JSON))
@@ -95,13 +95,13 @@ class EmployeeControllerTest {
     }
 
     @Test
-    void searchEmployees_WithNoParameters_ReturnsAllEmployees() throws Exception {
+    void searchEmployeesByName_WithNoParameters_ReturnsAllEmployees() throws Exception {
         // Given
         when(employeeService.findEmployeesWithCustomMatcher(null, null))
                 .thenReturn(employeeList);
 
         // When & Then
-        mockMvc.perform(get("/api/employees/search")
+        mockMvc.perform(get("/api/employees/search-by-name")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
